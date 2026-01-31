@@ -1,24 +1,26 @@
-/* --- BOUTON PRIMAIRE (Vert foncé) --- */
+/* --- BOUTON PRIMAIRE (Style harmonisé et corrigé) --- */
 .styled-button-primary {
     position: relative;
-    padding: 1rem 2rem;
+    padding: 1rem 2rem; /* État initial identique au secondaire */
     font-size: 1.1rem;
     font-weight: bold;
     color: #E8EBE0; /* Texte clair */
-    background: linear-gradient(to bottom, #52796F, #354F52); /* Dégradé vert */
+    background: linear-gradient(to bottom, #52796F, #354F52); /* Ton dégradé vert d'origine */
     border-radius: 9999px;
     cursor: pointer;
-    box-shadow: 0 2px 4px rgba(47, 62, 70, 0.4), 0 10px 20px rgba(47, 62, 70, 0.2); /* Ombre #2F3E46 */
-    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(47, 62, 70, 0.4), 0 10px 20px rgba(47, 62, 70, 0.2);
+    border: 1px solid #2F3E46;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #2F3E46; /* Bordure la plus foncée */
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1); /* Transition fluide corrigée */
 }
 
-.styled-button-primary:active {
-    transform: translateY(2px);
-    box-shadow: 0 1px 2px rgba(47, 62, 70, 0.5), 0 5px 10px rgba(47, 62, 70, 0.3);
+.styled-button-primary:hover {
+    /* Correction de l'animation : agrandissement du rectangle */
+    padding-right: 3.5rem;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(47, 62, 70, 0.5), 0 12px 24px rgba(47, 62, 70, 0.3);
 }
 
 .styled-button-primary .inner-button {
@@ -31,14 +33,26 @@
     margin-left: 10px;
     border-radius: 50%;
     border: 1px solid #2F3E46;
-    transition: all 0.2s ease;
+    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1); /* Animation synchronisée */
+}
+
+.styled-button-primary:hover .inner-button {
+    /* Déplacement de l'icône dans le rectangle agrandi */
+    transform: translateX(10px);
 }
 
 .styled-button-primary .inner-button .icon {
-    fill: #E8EBE0; /* Icone claire */
-    transition: transform 0.3s ease;
+    fill: #E8EBE0;
+    transition: transform 0.4s ease;
 }
 
+.styled-button-primary:hover .inner-button .icon {
+    transform: scale(1.1);
+}
+
+.styled-button-primary:active {
+    transform: translateY(2px);
+}
 
 /* --- BOUTON SECONDAIRE (Fond clair) --- */
 .styled-button-secondary {
