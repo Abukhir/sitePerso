@@ -104,3 +104,37 @@
 .styled-button-secondary:hover .icon {
     transform: translateX(5px);
 }
+
+/* --- BOUTON PRIMAIRE --- */
+.styled-button-primary {
+    /* ... tes propriétés actuelles ... */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Transition plus fluide */
+}
+
+.styled-button-primary:hover {
+    padding-right: 3rem; /* Augmente l'espace à droite pour "pousser" le bouton */
+    background: linear-gradient(to bottom, #354F52, #2F3E46); /* Légère variation au hover */
+}
+
+/* --- BOUTON SECONDAIRE --- */
+.styled-button-secondary {
+    /* ... tes propriétés actuelles ... */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.styled-button-secondary:hover {
+    padding-right: 3rem; /* Agrandi le rectangle vers la droite */
+}
+
+/* --- ANIMATION DE L'ICÔNE --- */
+.styled-button-primary:hover .icon,
+.styled-button-secondary:hover .icon {
+    transform: translateX(8px); /* Accentue légèrement le mouvement de l'icône */
+}
+
+/* Ajustement du cercle de l'icône pour suivre le mouvement */
+.styled-button-primary:hover .inner-button,
+.styled-button-secondary:hover .icon-container {
+    transform: translateX(5px);
+    transition: transform 0.3s ease;
+}
