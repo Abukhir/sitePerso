@@ -286,3 +286,16 @@ a:hover {
         padding: 40px 30px;
     }
 }
+
+strong, .custom-bold {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    color: #2F3E46; /* Ton vert très foncé */
+}
+
+/* Style global pour l'italique (*) */
+em, .custom-italic {
+    font-style: italic;
+    color: #52796F; /* Ton vert moyen pour nuancer l'italique */
+    font-family: 'Inter', sans-serif;
+}

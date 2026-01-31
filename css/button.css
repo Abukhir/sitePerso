@@ -116,25 +116,40 @@
     background: linear-gradient(to bottom, #354F52, #2F3E46); /* Légère variation au hover */
 }
 
-/* --- BOUTON SECONDAIRE --- */
+/* --- BOUTON SECONDAIRE (Correctif) --- */
 .styled-button-secondary {
-    /* ... tes propriétés actuelles ... */
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    padding: 1rem 2rem; /* État initial */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1); /* Transition plus naturelle */
+    /* ... tes autres styles ... */
 }
 
 .styled-button-secondary:hover {
-    padding-right: 3rem; /* Agrandi le rectangle vers la droite */
+    /* On augmente le padding à droite pour laisser de la place à l'icône qui bouge */
+    padding-right: 3.5rem;
+    transform: translateY(-2px); /* Optionnel : petit effet de levée */
 }
 
-/* --- ANIMATION DE L'ICÔNE --- */
-.styled-button-primary:hover .icon,
-.styled-button-secondary:hover .icon {
-    transform: translateX(8px); /* Accentue légèrement le mouvement de l'icône */
+.styled-button-secondary .icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-/* Ajustement du cercle de l'icône pour suivre le mouvement */
-.styled-button-primary:hover .inner-button,
 .styled-button-secondary:hover .icon-container {
-    transform: translateX(5px);
-    transition: transform 0.3s ease;
+    /* On déplace l'icône vers la droite */
+    transform: translateX(10px);
+}
+
+.styled-button-secondary .icon {
+    transition: transform 0.4s ease;
+}
+
+.styled-button-secondary:hover .icon {
+    /* Petit mouvement supplémentaire de la flèche/enveloppe à l'intérieur */
+    transform: scale(1.1);
 }
