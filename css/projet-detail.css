@@ -1,0 +1,175 @@
+.projet-detail-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 30px;
+    color: #354F52; /* Texte principal */
+}
+
+/* En-tête */
+.projet-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.projet-category {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    background-color: #84A98C; /* Vert accentué */
+    color: #E8EBE0;
+    text-transform: uppercase;
+}
+
+.projet-header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 48px;
+    color: #2F3E46; /* Vert très foncé */
+    margin: 20px 0 15px 0;
+}
+
+.projet-short-desc {
+    font-size: 18px;
+    color: #52796F; /* Vert moyen */
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto 25px auto;
+}
+
+/* Tags */
+.projet-tags {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tag {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    background-color: #CAD2C5; /* Fond de section */
+    color: #354F52;
+}
+
+/* Image et Contenu */
+.projet-main-image {
+    width: 100%;
+    /* Définir la hauteur du "cadre" */
+    height: 400px;
+    margin-bottom: 40px;
+    border-radius: 12px;
+    overflow: hidden; /* Important pour cacher ce qui dépasse */
+    background-color: #CAD2C5; /* S'affiche si l'image charge */
+}
+
+.projet-main-image img {
+    width: 100%;
+    height: 100%;
+
+    /* C'est la propriété clé : */
+    /* Comportement : remplir le conteneur en gardant l'aspect-ratio,
+       en rognant les bords si nécessaire. */
+    object-fit: cover;
+
+    display: block;
+}
+
+
+
+.projet-content {
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: #354F52;
+}
+
+/* Paragraphes par défaut */
+.projet-content p {
+    margin-bottom: 20px;
+}
+
+/* Forcer les images à ne jamais déborder */
+.projet-content img {
+    max-width: 100%;
+    height: auto; /* Garder le ratio */
+    display: block; /* Éviter les espaces indésirables */
+    margin: 25px 0; /* Ajouter de l'espace */
+    border-radius: 8px; /* Cohérence esthétique */
+}
+
+/* Styliser tous les niveaux de titres */
+.projet-content h1,
+.projet-content h2,
+.projet-content h3,
+.projet-content h4,
+.projet-content h5 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #2F3E46;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+/* Hiérarchie de taille (plus petits que le titre principal) */
+.projet-content h1 { font-size: 30px; }
+.projet-content h2 { font-size: 26px; }
+.projet-content h3 { font-size: 22px; }
+.projet-content h4 { font-size: 18px; }
+.projet-content h5 { font-size: 17px; }
+
+/* Styliser les listes */
+.projet-content ul,
+.projet-content ol {
+    margin-bottom: 20px;
+    padding-left: 30px;
+}
+.projet-content li {
+    margin-bottom: 10px;
+    line-height: 1.7;
+}
+
+/* Styliser les liens dans le contenu */
+.projet-content a {
+    color: #52796F;
+    font-weight: 600;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+.projet-content a:hover {
+    color: #354F52;
+}
+
+/* Styliser les blockquotes */
+.projet-content blockquote {
+    margin: 25px 0;
+    padding: 15px 20px;
+    background-color: #CAD2C5;
+    border-left: 4px solid #84A98C;
+    font-style: italic;
+    color: #354F52;
+}
+.projet-content blockquote p {
+    margin: 0;
+}
+
+/* Contenir les iframes (ex: vidéos Youtube) */
+.projet-content iframe {
+    max-width: 100%;
+    margin: 25px 0;
+    border-radius: 8px;
+}
+
+/* Responsivité */
+@media (max-width: 600px) {
+    .projet-header h1 {
+        font-size: 36px;
+    }
+    .projet-short-desc {
+        font-size: 16px;
+    }
+}

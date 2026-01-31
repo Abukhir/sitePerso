@@ -1,0 +1,106 @@
+/* --- BOUTON PRIMAIRE (Vert foncé) --- */
+.styled-button-primary {
+    position: relative;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #E8EBE0; /* Texte clair */
+    background: linear-gradient(to bottom, #52796F, #354F52); /* Dégradé vert */
+    border-radius: 9999px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(47, 62, 70, 0.4), 0 10px 20px rgba(47, 62, 70, 0.2); /* Ombre #2F3E46 */
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #2F3E46; /* Bordure la plus foncée */
+}
+
+.styled-button-primary:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 2px rgba(47, 62, 70, 0.5), 0 5px 10px rgba(47, 62, 70, 0.3);
+}
+
+.styled-button-primary .inner-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, #52796F, #354F52);
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    border-radius: 50%;
+    border: 1px solid #2F3E46;
+    transition: all 0.2s ease;
+}
+
+.styled-button-primary .inner-button .icon {
+    fill: #E8EBE0; /* Icone claire */
+    transition: transform 0.3s ease;
+}
+
+
+/* --- BOUTON SECONDAIRE (Fond clair) --- */
+.styled-button-secondary {
+    position: relative;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #354F52; /* Texte foncé */
+    background: linear-gradient(to bottom, #E8EBE0, #CAD2C5); /* Dégradé fond clair */
+    border-radius: 9999px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(47, 62, 70, 0.1), 0 10px 20px rgba(47, 62, 70, 0.1);
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(53, 79, 82, 0.2); /* Bordure subtile */
+    overflow: hidden;
+}
+
+.styled-button-secondary::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.3), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.styled-button-secondary:hover::before {
+    transform: translateX(100%);
+}
+
+.styled-button-secondary:active {
+    transform: translateY(2px);
+}
+
+.styled-button-secondary .icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Cercle icone en vert */
+    background: linear-gradient(to bottom, #52796F, #354F52);
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.styled-button-secondary .icon {
+    width: 20px;
+    height: 20px;
+    fill: #E8EBE0; /* Icone claire */
+    transition: transform 0.3s ease;
+}
+
+/* Animation de survol (pour les deux boutons) */
+.styled-button-primary:hover .icon,
+.styled-button-secondary:hover .icon {
+    transform: translateX(5px);
+}

@@ -1,0 +1,121 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+
+    /* Police de corps (Inter) pour la nav */
+    font-family: 'Inter', sans-serif;
+    font-weight: 600; /* SemiBold pour la nav */
+
+    position: sticky;
+    /* ... (reste des styles .navbar) ... */
+}
+
+.logo a {
+    /* Police Titre (Montserrat) pour le logo */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700; /* Bold */
+    font-size: 22px;
+    color: #354F52;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    color: #52796F; /* Liens en vert moyen */
+    text-decoration: none;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #354F52; /* Soulignement foncé */
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.nav-links a:hover {
+    color: #354F52; /* Hover foncé */
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Burger */
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #354F52; /* Lignes foncées */
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* --- RESPONSIVITÉ NAV --- */
+@media (max-width: 900px) {
+    .navbar {
+        padding: 20px 30px;
+    }
+}
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        width: 100%;
+        /* Fond de section alternatif pour le menu */
+        background-color: #CAD2C5;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        transform: translateX(100%);
+        transition: transform 0.4s ease-in-out;
+    }
+
+    .nav-links li {
+        margin-left: 0;
+    }
+
+    .nav-links a {
+        font-size: 20px;
+        color: #354F52; /* Liens foncés sur fond clair */
+    }
+
+    .nav-active {
+        transform: translateX(0%);
+    }
+
+    .burger {
+        display: block;
+    }
+}
+/* ... (Animations .toggle) ... */
+.toggle .line1 { transform: rotate(-45deg) translate(-5px, 6px); }
+.toggle .line2 { opacity: 0; }
+.toggle .line3 { transform: rotate(45deg) translate(-5px, -6px); }

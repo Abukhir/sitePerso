@@ -1,0 +1,38 @@
+[
+  {
+    "id": "projet-echo",
+    "title": "Court-Métrage \"L'Écho\"",
+    "category": "Montage",
+    "imageUrl": "images/placeholder-echo.jpg",
+    "tags": ["Premiere Pro", "After Effects", "Post-production"],
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+    "fullContent": "<p>Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat.</p><p>Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales.</p>"
+  },
+  {
+    "id": "projet-portfolio",
+    "title": "Site Web Portfolio",
+    "category": "Développement",
+    "imageUrl": "img/placeholder.png",
+    "tags": ["PHP", "CSS", "JavaScript", "Responsive Design"],
+    "description": "Aliquam erat volutpat. Ut 'eu' 'mi' 'sit' 'amet' 'dui' 'gravida' 'semper'. 'Nam' 'ultrices', 'nisi' 'nec' 'suscipit' 'gravida', 'massa' 'sem' 'placerat' 'erat', 'in' 'elementis' 'erat' 'risus' 'sed' 'odio'.",
+    "fullContent": "<p>Integer nonummy. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat.</p><p>Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales.</p>"
+  },
+  {
+    "id": "projet-connect",
+    "title": "Maquette UI/UX \"Connect\"",
+    "category": "Design",
+    "imageUrl": "img/placeholder2.jpg",
+    "tags": ["Figma", "UI", "UX", "Mobile App"],
+    "description": "Praesent 'eu' 'tellus' 'eu' 'ligula' 'aliquam' 'bibendum'. 'Duis' 'vitae' 'sapien'. 'Duis' 'sem' 'tellus', 'tempor' 'vel', 'imperdiet' 'nec', 'venenatis' 'quis', 'sem.",
+    "fullContent": "<p>Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat.</p><p>Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales.</p>"
+  },
+  {
+    "id": "placeholder-test",
+    "title": "Placeholder de fou",
+    "category": "Placeholder",
+    "imageUrl": "img/placeholder.png",
+    "tags": ["Place", "Holder", "Test", "5"],
+    "description": "Ouai ouai ouai gros placeholder",
+    "fullContent": "<img src='img/placeholder2.jpg' alt='Image du projet'> <p> Test 1 2 </p> <h1> Ouai </h2>"
+  }
+]

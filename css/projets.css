@@ -1,0 +1,196 @@
+/* Conteneur principal de la page */
+.projets-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 30px;
+}
+
+/* En-tête de la page */
+.projets-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.projets-header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 42px;
+    color: #2F3E46;
+    margin: 0;
+}
+.projets-header p {
+    font-size: 18px;
+    color: #52796F;
+    margin-top: 10px;
+}
+
+/* Barre de contrôles (Filtres + Recherche) */
+.project-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* Pour la responsivité */
+    gap: 20px;
+}
+
+/* Groupe de boutons de filtre */
+.filter-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid #CAD2C5;
+    background-color: transparent;
+    color: #52796F;
+}
+
+.filter-btn:hover {
+    background-color: #CAD2C5;
+    color: #354F52;
+}
+
+.filter-btn.active {
+    background-color: #52796F;
+    color: #E8EBE0;
+    border-color: #52796F;
+}
+
+/* Barre de recherche */
+.search-wrapper {
+    flex-grow: 1; /* Prend l'espace restant */
+    min-width: 250px;
+}
+#search-bar {
+    width: 100%;
+    padding: 12px 20px;
+    border: 2px solid #CAD2C5;
+    border-radius: 9999px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    background-color: #E8EBE0;
+    color: #354F52;
+    transition: border-color 0.3s ease;
+}
+#search-bar:focus {
+    outline: none;
+    border-color: #84A98C;
+}
+
+/* Grille des projets */
+.project-grid {
+    display: grid;
+    /* Grille responsive: auto-fill ne laisse pas les items s'étirer */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.project-card {
+    background-color: #CAD2C5;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(47, 62, 70, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* display: grid est utilisé par le JS pour cacher/montrer */
+    display: grid;
+    grid-template-rows: auto 1fr; /* Image auto, contenu prend le reste */
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(47, 62, 70, 0.1);
+}
+
+.card-image {
+    height: 180px; /* Définit la hauteur du conteneur */
+    background-color: #CAD2C5; /* Couleur de fond pendant le chargement */
+    overflow: hidden; /* Cache les parties de l'image qui dépassent */
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Assure que l'image remplit l'espace sans se déformer */
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+.no-results-message {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #CAD2C5; /* Fond de section */
+    border-radius: 12px;
+    margin-top: 30px;
+    /* Caché par défaut, le JS le montrera */
+    display: none;
+}
+
+.no-results-message h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    color: #2F3E46;
+    margin: 0 0 10px 0;
+}
+
+.no-results-message p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: #354F52;
+    margin: 0;
+}
+
+.card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-tag {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 9999px;
+    background-color: #84A98C;
+    color: #E8EBE0;
+    align-self: flex-start; /* Se place en haut à gauche */
+    margin-bottom: 15px;
+}
+
+.card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #2F3E46;
+    margin: 0 0 10px 0;
+}
+
+.card-content p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: #354F52;
+    line-height: 1.6;
+    flex-grow: 1; /* Pousse le bouton en bas */
+    margin-bottom: 20px;
+}
+
+/* Responsivité des contrôles */
+@media (max-width: 768px) {
+    .project-controls {
+        flex-direction: column;
+        align-items: stretch; /* Les éléments prennent toute la largeur */
+    }
+    .filter-group {
+        justify-content: center;
+    }
+}

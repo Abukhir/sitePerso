@@ -1,0 +1,288 @@
+body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    background-color: #E8EBE0;
+    color: #354F52;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    color: #52796F;
+    font-weight: 800;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+a:hover {
+    color: #354F52;
+}
+
+/* SECTION 1 : HÉROS */
+.hero-section {
+    background-color: #CAD2C5;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+.section-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 60% 40%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    flex-grow: 1; /* Prend l'espace disponible */
+}
+
+.section-content .section-title {
+    font-size: 60px;
+    margin: 0;
+    line-height: 1.2;
+    max-width: 60%; /* Augmenté pour le nouveau titre */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    color: #2F3E46;
+}
+
+.section-content .section-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    border-top: 1px solid #52796F;
+}
+.section-content .section-footer p {
+    margin: 0;
+    font-size: 16px;
+    max-width: 40%;
+}
+
+/* SECTION 2 : QUI SUIS-JE */
+#me-container {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    padding: 60px;
+    background-color: #E8EBE0;
+    margin: auto;
+    color: #354F52;
+    align-items: center;
+    gap: 50px;
+}
+
+#me-container .image-container {
+    margin-right: 0; /* Supprimé du style d'origine */
+}
+#me-container .image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+#me-container .me-content h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 36px;
+    margin-top: 0;
+    color: #2F3E46;
+}
+#me-container .me-content p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+/* SECTION 3 : COMPÉTENCES */
+#skills-section {
+    padding: 60px 50px;
+    text-align: center;
+    background-color: #CAD2C5;
+}
+#skills-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 36px;
+    color: #2F3E46;
+    margin: 0 0 40px 0;
+}
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    text-align: left;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.skill-card {
+    background-color: #E8EBE0;
+    padding: 30px;
+    border-radius: 12px;
+}
+.skill-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: #354F52;
+    margin-top: 0;
+}
+.skill-card p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+}
+.skill-card strong {
+    color: #52796F;
+}
+
+/* SECTION 4 : PROJETS RÉCENTS */
+#featured-projects {
+    padding: 60px 50px;
+    background-color: #E8EBE0;
+}
+#featured-projects h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 36px;
+    color: #2F3E46;
+    margin: 0 0 10px 0;
+    text-align: center;
+}
+.projects-subtitle {
+    font-size: 18px;
+    color: #52796F;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Styles copiés de projets.css pour l'index */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.project-card {
+    background-color: #CAD2C5;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(47, 62, 70, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(47, 62, 70, 0.1);
+}
+.card-image {
+    height: 180px;
+    background-color: #CAD2C5;
+    overflow: hidden;
+}
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+.project-card:hover .card-image img {
+    transform: scale(1.05);
+}
+.card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.card-tag {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 9999px;
+    background-color: #84A98C;
+    color: #E8EBE0;
+    align-self: flex-start;
+    margin-bottom: 15px;
+}
+.card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #2F3E46;
+    margin: 0 0 10px 0;
+}
+.card-content p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: #354F52;
+    line-height: 1.6;
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+.all-projects-link {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* SECTION 5 : CTA CONTACT */
+#contact-cta {
+    padding: 60px 50px;
+    text-align: center;
+    background-color: #354F52;
+    color: #E8EBE0;
+}
+#contact-cta h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 36px;
+    color: #FFFFFF;
+    margin: 0 0 15px 0;
+}
+#contact-cta p {
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    color: #CAD2C5;
+}
+
+/* --- RESPONSIVITÉ --- */
+@media (max-width: 900px) {
+    .section-content {
+        padding: 30px;
+        grid-template-rows: auto auto; /* Ajustement pour le contenu */
+    }
+    .section-content .section-title {
+        max-width: 100%;
+        font-size: 48px;
+    }
+    .section-content .section-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 20px 0;
+    }
+    .section-content .section-footer p {
+        max-width: 100%;
+    }
+    #me-container {
+        grid-template-columns: 1fr;
+        padding: 40px 30px;
+    }
+}
+@media (max-width: 500px) {
+    .section-content .section-title {
+        font-size: 36px;
+    }
+    #me-container .me-content p {
+        font-size: 16px;
+    }
+    #skills-section, #featured-projects, #contact-cta {
+        padding: 40px 30px;
+    }
+}
