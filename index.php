@@ -45,7 +45,7 @@
         <h2>Bonjour, je suis Alexis</h2>
         <p>Éternel assoiffé de création, je suis actuellement en 3ème année de BUT MMI à l'IUT de Chambéry, tout en étant <a href="experiences/arkana_production.php">alternant chez Arkana Production</a>.</p>
         <p>Passionné par l'art de raconter des histoires, je me spécialise en **post-production vidéo** (montage, étalonnage, motion design), mais ma formation m'apporte également de solides compétences en design d'interface et en développement web.</p>
-        <a href="doc/cv-alexis-cardon.pdf" target="_blank">
+        <a href="doc/cv/cv-alexis-cardon-web.pdf" target="_blank">
             <button class="styled-button-primary">
                 Télécharger mon CV
                 <div class="inner-button">
