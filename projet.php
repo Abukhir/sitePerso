@@ -4,6 +4,14 @@ $projet_id = null;
 $projet_data = null;
 $error_message = '';
 
+function debug_to_console($data) {
+    $output = $data;
+    if (is_array($output))
+        $output = implode(',', $output);
+
+    echo "<script>console.log(JSON.parse('" . json_encode($data) . "'));</script>";
+}
+
 // --- 2. Vérifier le paramètre GET ---
 if (isset($_GET['id']) && !empty($_GET['id'])) {
     $projet_id = $_GET['id'];
@@ -30,6 +38,45 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
 } else {
     $error_message = "Erreur: Aucun projet spécifié.";
 }
+function renderDynamicContent($projet) {
+    $content = $projet['fullContent'];
+    $medias = isset($projet['media']) ? $projet['media'] : [];
+    debug_to_console($medias);
+    // Regex mise à jour pour capturer : <MEDIA:id:style>
+    return preg_replace_callback('/<MEDIA:(.*?)(?::(.*?))?>(.*?)(?=<MEDIA|$)s/s', function($matches) use ($medias) {
+        debug_to_console("preg_replace_callback called");
+        $mediaId = $matches[1];
+        $style = isset($matches[2]) ? $matches[2] : 'default';
+        $followingText = isset($matches[3]) ? $matches[3] : ''; // Capture le texte après la balise
+        $mediaHtml = "";
+        foreach ($medias as $m) {
+            if ($m['id'] === $mediaId) {
+                if ($m['type'] === 'image') {
+                    $mediaHtml = "<img src='{$m['url']}' alt='{$m['alt']}'>";
+                } elseif ($m['type'] === 'video') {
+                    $mediaHtml = "<div class='video-wrapper'><iframe src='{$m['url']}' frameborder='0' allowfullscreen></iframe></div>";
+                }
+                debug_to_console("renderDynamicContent breaks");
+                break;
+            }
+        }
+
+        if (empty($mediaHtml)) return $followingText;
+
+        // Si le style est "split", on crée une mise en page deux colonnes
+        if ($style === 'split') {
+            return "<div class='media-split'>
+                        <div class='split-media'>$mediaHtml</div>
+                        <div class='split-text'>$followingText</div>
+                    </div>";
+        }
+
+        // Rendu standard pour les autres styles
+        debug_to_console("renderDynamicContent is returning");
+        return "<div class='media-container style-$style'>$mediaHtml</div>" . $followingText;
+    }, $content);
+}
+$displayContent = renderDynamicContent($projet_data);
 ?>
 <!doctype html>
 <html lang="fr">
@@ -69,7 +116,7 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
         </div>
 
         <div class="projet-content">
-            <?php echo $projet_data['fullContent']; ?>
+            <?php echo $displayContent; ?>
         </div>
 
     <?php else: // Si projet non trouvé ou ID manquant, afficher l'erreur ?>
