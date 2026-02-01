@@ -43,6 +43,7 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 10px;
+    margin-bottom: 1.5vw;
 }
 
 .tag {
@@ -159,6 +160,8 @@
 
 /* Contenir les iframes (ex: vidéos Youtube) */
 .projet-content iframe {
+    min-width: 20vw;
+    min-height: 25vh;
     max-width: 100%;
     margin: 25px 0;
     border-radius: 8px;
@@ -181,50 +184,18 @@
 
 /* --- Variantes de styles --- */
 
-.media-container.style-petit {
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
+.media-container {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: block; /* Nécessaire pour les marges auto */
+    max-width: 100%; /* Sécurité pour ne pas déborder sur mobile */
 }
 
-.media-container.style-large {
-    max-width: 100%; /* Prend toute la largeur du texte */
-}
-
-.media-container.style-gauche {
-    width: 50%;
-    float: left;
-    margin-right: 20px;
-}
-
-.media-container.style-droite {
-    width: 50%;
-    float: right;
-    margin-left: 20px;
-}
-
-/* Nettoyage des floats pour que le texte ne casse pas */
-.projet-content::after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-/* --- Responsivité --- */
-@media (max-width: 768px) {
-    .media-container.style-gauche,
-    .media-container.style-droite {
-        width: 100%;
-        float: none;
-        margin: 20px 0;
-    }
-}
-
-/* --- Gestion des Vidéos --- */
-.media-container.style-large {
-    width: 100%; /* La vidéo prendra toute la largeur du conteneur parent */
-    max-width: 1100px;
-    margin: 40px auto;
+.media-container img {
+    width: 100%; /* L'image prend 100% du conteneur dont la taille est gérée en PHP */
+    height: auto;
+    border-radius: 12px;
+    display: block;
 }
 
 .video-wrapper {
@@ -243,39 +214,24 @@
     height: 100%;
 }
 
-/* --- Système Split (Image Gauche / Texte Droite) --- */
-.media-split {
-    display: flex;
-    align-items: flex-start;
-    gap: 40px;
-    margin: 40px 0;
-}
-
-.split-media {
-    flex: 1; /* Prend 50% de la largeur */
-}
-
-.split-media img {
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-    display: block;
-}
-
-.split-text {
-    flex: 1; /* Prend 50% de la largeur */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-/* Responsivité split */
-@media (max-width: 900px) {
-    .media-split {
-        flex-direction: column; /* Empilement sur tablette/mobile */
-        gap: 20px;
+/* Responsivité : sur mobile, on force souvent le 100% de large */
+@media (max-width: 768px) {
+    .media-container {
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
     }
-    .split-media, .split-text {
-        width: 100%;
-    }
+}
+
+.tag {
+    display: inline-block;
+    text-decoration: none; /* Enlever le soulignement par défaut */
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.tag:hover {
+    background-color: var(--text-mid); /* Utilise ton vert moyen au survol */
+    color: var(--bg-light);
+    transform: translateY(-2px);
 }

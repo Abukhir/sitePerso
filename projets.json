@@ -2,22 +2,24 @@
   {
     "id": "projet-echo",
     "media": [
-      { "id": "mon-image", "type": "image", "url": "img/placeholder.png", "alt": "Description" },
-      { "id": "ma-video", "type": "video", "url": "https://www.youtube.com/embed/XXXX" }
+      { "id": "affiche-v1", "type": "image", "url": "img/placeholder.png", "alt": "Affiche" },
+      { "id": "video-finale", "type": "video", "url": "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ" }
     ],
     "title": "Court-Métrage \"L'Écho\"",
     "category": "Montage",
     "imageUrl": "img/placeholder.png",
-    "tags": ["Premiere Pro", "After Effects", "Post-production"],
+    "tags": ["Montage", "Storytelling"],
+    "smallTags": ["Premiere Pro", "After Effects", "Post-production"],
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-    "fullContent": "<MEDIA:mon-image:split> Ce texte apparaîtra à droite de l'image car j'ai utilisé le style split. <MEDIA:ma-video:large> Cette vidéo sera grande."
+    "fullContent": "Voici une petite image à gauche : <MEDIA:affiche-v1:left:50> Et ici une vidéo centrée en taille moyenne : <MEDIA:video-finale:left:100>"
   },
   {
     "id": "projet-portfolio",
     "title": "Site Web Portfolio",
     "category": "Développement",
     "imageUrl": "img/placeholder.png",
-    "tags": ["PHP", "CSS", "JavaScript", "Responsive Design"],
+    "tags": ["Développement"],
+    "smallTags": ["PHP", "CSS", "JavaScript", "Responsive Design"],
     "description": "Aliquam erat volutpat. Ut 'eu' 'mi' 'sit' 'amet' 'dui' 'gravida' 'semper'. 'Nam' 'ultrices', 'nisi' 'nec' 'suscipit' 'gravida', 'massa' 'sem' 'placerat' 'erat', 'in' 'elementis' 'erat' 'risus' 'sed' 'odio'.",
     "fullContent": "<p>Integer nonummy. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat.</p><p>Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales.</p>"
   },
@@ -26,26 +28,9 @@
     "title": "Maquette UI/UX \"Connect\"",
     "category": "Design",
     "imageUrl": "img/placeholder2.jpg",
-    "tags": ["Figma", "UI", "UX", "Mobile App"],
+    "tags": ["UI/UX"],
+    "smallTags": ["Figma"],
     "description": "Praesent 'eu' 'tellus' 'eu' 'ligula' 'aliquam' 'bibendum'. 'Duis' 'vitae' 'sapien'. 'Duis' 'sem' 'tellus', 'tempor' 'vel', 'imperdiet' 'nec', 'venenatis' 'quis', 'sem.",
     "fullContent": "<p>Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat.</p><p>Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales.</p>"
-  },
-  {
-    "id": "placeholder-test",
-    "title": "Placeholder de fou",
-    "category": "Placeholder",
-    "imageUrl": "img/placeholder.png",
-    "tags": ["Place", "Holder", "Test", "5"],
-    "description": "Ouai ouai ouai gros placeholder",
-    "fullContent": "<img src='img/placeholder2.jpg' alt='Image du projet'> <p> Test 1 2 </p> <h1> Ouai </h2>"
-  },
-  {
-    "id" : "test Clara",
-    "title": "Je fais des tests",
-    "category": "Clara je t'ames",
-    "imageUrl": "img/placeholder2.png",
-    "tags": ["Clara", "Grosse", "Pute"],
-    "description": "Nan mais c'est vraiment une pute",
-    "fullContent": "Enfaite je rigole"
   }
 ]

@@ -41,13 +41,15 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
 function renderDynamicContent($projet) {
     $content = $projet['fullContent'];
     $medias = isset($projet['media']) ? $projet['media'] : [];
-    debug_to_console($medias);
-    // Regex mise à jour pour capturer : <MEDIA:id:style>
-    return preg_replace_callback('/<MEDIA:(.*?)(?::(.*?))?>(.*?)(?=<MEDIA|$)s/s', function($matches) use ($medias) {
-        debug_to_console("preg_replace_callback called");
+
+    // Regex : <MEDIA:id:position:taille>
+    // Position : left, center, right
+    // Taille : un nombre (ex: 50) qui deviendra un pourcentage
+    return preg_replace_callback('/<MEDIA:([^:>]+)(?::([^:>]+))?(?::([^>]+))?>/', function($matches) use ($medias) {
         $mediaId = $matches[1];
-        $style = isset($matches[2]) ? $matches[2] : 'default';
-        $followingText = isset($matches[3]) ? $matches[3] : ''; // Capture le texte après la balise
+        $position = isset($matches[2]) ? $matches[2] : 'center';
+        $size = isset($matches[3]) ? $matches[3] : '100'; // Par défaut 100%
+
         $mediaHtml = "";
         foreach ($medias as $m) {
             if ($m['id'] === $mediaId) {
@@ -56,24 +58,21 @@ function renderDynamicContent($projet) {
                 } elseif ($m['type'] === 'video') {
                     $mediaHtml = "<div class='video-wrapper'><iframe src='{$m['url']}' frameborder='0' allowfullscreen></iframe></div>";
                 }
-                debug_to_console("renderDynamicContent breaks");
                 break;
             }
         }
 
-        if (empty($mediaHtml)) return $followingText;
+        if (empty($mediaHtml)) return "";
 
-        // Si le style est "split", on crée une mise en page deux colonnes
-        if ($style === 'split') {
-            return "<div class='media-split'>
-                        <div class='split-media'>$mediaHtml</div>
-                        <div class='split-text'>$followingText</div>
-                    </div>";
-        }
+        // Génération du style inline pour la taille et la justification
+        $alignStyle = "";
+        if ($position === 'left') $alignStyle = "margin-right: auto; margin-left: 0;";
+        elseif ($position === 'right') $alignStyle = "margin-left: auto; margin-right: 0;";
+        else $alignStyle = "margin-left: auto; margin-right: auto;";
 
-        // Rendu standard pour les autres styles
-        debug_to_console("renderDynamicContent is returning");
-        return "<div class='media-container style-$style'>$mediaHtml</div>" . $followingText;
+        return "<div class='media-container' style='width: {$size}%; {$alignStyle}'>
+                    $mediaHtml
+                </div>";
     }, $content);
 }
 $displayContent = renderDynamicContent($projet_data);
@@ -106,7 +105,9 @@ $displayContent = renderDynamicContent($projet_data);
             <p class="projet-short-desc"><?php echo htmlspecialchars($projet_data['description']); ?></p>
             <div class="projet-tags">
                 <?php foreach ($projet_data['tags'] as $tag): ?>
-                    <span class="tag"><?php echo htmlspecialchars($tag); ?></span>
+                    <a href="mes-projets.php?filter=<?php echo urlencode($tag); ?>" class="tag">
+                        <?php echo htmlspecialchars($tag); ?>
+                    </a>
                 <?php endforeach; ?>
             </div>
         </header>
